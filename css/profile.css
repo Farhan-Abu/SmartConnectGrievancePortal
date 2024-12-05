@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: white;
+  /* Light background for the body */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-right: 20px;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.nav-item {
+  margin-right: 20px;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position it below the profile icon */
+  background-color: white; /* Background color */
+  min-width: 160px; /* Minimum width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1; /* Ensure it is on top */
+}
+
+.dropdown-content a {
+  display: block; /* Make the links block-level elements */
+  padding: 10px 15px; /* Add padding for spacing */
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+}
+
+.dropdown-content i {
+  margin-right: 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Change background on hover */
+}
+
+.nav-item.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown on hover */
+}
+
+.show {
+  display: block;
+  /* Show the dropdown */
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+.profile-icon {
+  width: 40px; /* Size of the circle */
+  height: 40px; /* Size of the circle */
+  background-color: #007bff; /* Circle color */
+  color: white; /* Text color */
+  border-radius: 50%; /* Makes it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px; /* Font size for the letter */
+  margin-left: 10px; /* Spacing from the previous item */
+}
+
+/* Profile Container */
+.profile-container {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px; /* Space around the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 450px; /* Limit the width */
+  margin: 20px auto; /* Center the container */
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Profile Row */
+.profile-row {
+  margin-bottom: 15px; /* Space between rows */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between label and input */
+  align-items: center; /* Center vertically */
+}
+
+/* Labels */
+.profile-row label {
+  font-weight: bold; /* Bold labels */
+  color: #333; /* Darker text color */
+  width: 150px;
+}
+
+/* Input Fields */
+.profile-row input {
+  flex: 1; /* Allow input to take available space */
+  padding: 10px; /* Space inside the input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  background-color: #fff; /* White background for input */
+  color: #555; /* Darker text color for input */
+}
+
+/* Disabled Input */
+.profile-row input:disabled {
+  background-color: #e9ecef; /* Light gray background for disabled input */
+  color: #6c757d; /* Gray text for disabled input */
+}
+
+.progress-tracker {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.tracker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step.completed {
+  background-color: green;
+  /* color for completed steps */
+  color: white;
+  /* text color for better contrast */
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+.step.active .circle {
+  background-color: #4caf50;
+}
+
+.step.active + .line {
+  background-color: #4caf50;
+}
+
+.step p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.step.completed p {
+  font-weight: bold;
+  /* make the text bold */
+}
+
+.progress-bar {
+  width: 100%; /* Full width of the parent container */
+  background-color: #f3f3f3; /* Background color of the bar */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Ensures the inner div does not overflow */
+  height: 20px; /* Height of the progress bar */
+  margin-top: 10px; /* Space above the progress bar */
+}
+
+.progress {
+  height: 100%; /* Full height of the progress bar */
+  background-color: rgb(0, 186, 0); /* Color of the filled part of the bar */
+  width: 0%; /* Initial width (will be set dynamically) */
+  transition: width 0.5s; /* Smooth transition for width change */
+}
+
+.grievance-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.grievance-list th,
+.grievance-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.grievance-list th {
+  background-color: #4caf50;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.grievance-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.grievance-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+.grievance-list td {
+  color: #333;
+  cursor: pointer;
+}
+
+.grievance-list thead {
+  border-bottom: 2px solid #4caf50;
+}
+
+.grievance-list {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grievance-list table {
+  border-radius: 10px;
+  overflow: hidden;
+}
